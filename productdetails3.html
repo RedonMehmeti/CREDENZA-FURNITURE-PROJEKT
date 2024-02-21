@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pDetails3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Oswald&family=Poppins&family=Zilla+Slab:ital,wght@1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">
+        <img src="https://www.freepnglogos.com/uploads/logo-home-png/vector-bambu-home-logo-download-vector-logos-22.png" alt="Logo">
+    </div>
+    <ul class="nav-links">
+        <li><a href="products.html">Product</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+
+<div class="title">Products</div>
+<div id="content">
+    <div id="left">
+        <div class="product-info">
+            <p class="bigP">Freezer</p>
+            <br>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis minus iste pariatur eum corrupti dolor blanditiis esse ipsam exercitationem nostrum facilis dolorem, sunt iure explicabo? Dolorum, fugit ullam. Corporis totam, dolores nostrum magnam obcaecati in, quod, repudiandae aliquam minus adipisci numquam eligendi deserunt labore ab suscipit ipsam doloremque incidunt ipsum?</p>
+            <div class="colors">
+                <p>Colors: </p>
+                <div class="color blue" data-img="./kalterttt.png"></div>
+                <div class="color purple" data-img="./purpleee.png"></div>
+                <div class="color red" data-img="./kuqeee.png"></div>
+                <div class="color black" data-img="./zezeee.png"></div>
+            </div>
+            <br>
+            <p class="bigP">$120</p>
+            <button class="add">ADD TO CART</button>
+        </div>
+    </div>
+    <div id="right">
+        <img src="./refrigerator-2420419_1280.png" alt="" class="product-img">
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const colorDivs = document.querySelectorAll('.color');
+        const productImg = document.querySelector('.product-img');
+
+        colorDivs.forEach(function(colorDiv) {
+            colorDiv.addEventListener('click', function() {
+                const imgSrc = colorDiv.getAttribute('data-img');
+
+                // Fade out the current image
+                productImg.style.opacity = '0';
+
+                // Wait for a short delay for the fade out effect
+                setTimeout(function() {
+                    // Change the image source
+                    productImg.setAttribute('src', imgSrc);
+
+                    // Fade in the new image
+                    productImg.style.opacity = '1';
+                }, 300); // Adjust the delay time as needed
+            });
+        });
+    });
+
+</script>
+</body>
+</html>
